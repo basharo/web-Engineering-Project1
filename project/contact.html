@@ -46,22 +46,22 @@
 			<section>
 				<div>								
 					<div>
-						   <form method="post" action="contact.php">								
-								<fieldset>
-									<legend>Contact Information</legend>
-									<label for="nameField">name:</label><input tabindex="1" type="text" size="10"  minlength="2" maxlength="20"  id="name" name="name" required></input><br />
-									EMail: <input tabindex="2" type="email" id="email" name="email" required></input><br />
-									Age: <input tabindex="3" type="number" min ="10" max="120"  id="age" name="age" ></input><br />
-									Password: <input tabindex="4" type="password"  name="userPassword"  id="userPassword" required></input><br />
-								</fieldset>
-	
-								<div class="clear">
-									<input type="button" name="validate" value="validate" onclick="ValidationForm()"></input>
-									<input type="submit" name="submit" value="Submit"></input>
-									<input type="reset"  value="Start over"></input>
-								</button>
-								</div> 
-							</form>
+					   <form method="post" action="contact.php">								
+							<fieldset>
+								<legend>Contact Information</legend>
+								<label for="nameField">name:</label><input tabindex="1" type="text" size="10"  minlength="2" maxlength="20"  id="name" name="name" required></input><br />
+								EMail: <input tabindex="2" type="email" id="email" name="email" required></input><br />
+								Age: <input tabindex="3" type="number" min ="10" max="120"  id="age" name="age" ></input><br />
+								Password: <input tabindex="4" type="password"  name="userPassword"  id="userPassword" required></input><br />
+							</fieldset>
+							<p id="errorMessage"></p>
+							<div class="clear">
+								<input type="button" name="validate" value="validate" onclick="ValidationForm()"></input>
+								<input type="submit" name="submit" value="Submit"></input>
+								<input type="reset"  value="Start over"></input>
+							</button>
+							</div> 
+						</form>
 					</div>						
 				</div>
 			</section>

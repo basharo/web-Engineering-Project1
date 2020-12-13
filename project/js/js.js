@@ -9,6 +9,7 @@ var divReligious = document.getElementById("religious");
 var divPolitical = document.getElementById("political");
 var divRacist = document.getElementById("racist");
 var divSexist = document.getElementById("sexist");
+var errorText = "";
 
 for(var i = 0; i < items.length; i++){
 	tab.push(items[i].innerHTML);
@@ -107,39 +108,36 @@ function deleteJoke(){
 }
 
 function ValidationForm() {
-	if(document.getElementById("name") == null || document.getElementById("email") == null || document.getElementById("userPassword") == null ) {
-		alert("fill All fields are required(dashed Input).....!");
+	console.log(errorText);
+	errorText = '';	
+	
+	var name = document.getElementById("name").value;
+	var email = document.getElementById("email").value;
+	var myPassword = document.getElementById("userPassword").value;
+	// Regular Expression For Email
+	var emailReg = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+
+	if (name == '' || name.length < 2) {
+		errorText += '<BR>' + 'invalid Name Length... Minimum 2 characters';
+		console.log('name');
+	}
+	if (email == '' || !email.match(emailReg)) {
+		errorText += '<BR>' + 'Invalid Email Address...!!!';
+		console.log('email');
+	}
+	if (myPassword == '' || myPassword.length < 8) {
+		errorText += '<BR>' + 'The password must be at least 8 digit long!';
+		console.log('pass');
+	}	
+	
+	console.log(errorText);
+	if(errorText != '') {
+		document.getElementById("errorMessage").innerHTML = errorText;
 		return false;
 	}
-	else
-	{	
-		var name = document.getElementById("name").value;
-		var email = document.getElementById("email").value;
-		var myPassword = document.getElementById("userPassword").value;
-		// Regular Expression For Email
-		var emailReg = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-		
-		if (name != '' && email != '' && myPassword != '') {
-			if (email.match(emailReg)) {
-				if (myPassword.length > 7 && name.length > 1) {
-					alert("All type of validation has done on OnSubmit event.");
-					return true;
-				} else {
-					if (name.length < 2) {
-					alert("invalid Name Length... Minimum 2 characters");
-					return false;
-				}
-				alert("The password must be at least 8 digit long!");
-				return false;
-				}
-			} else {
-				alert("Invalid Email Address...!!!");
-				return false;
-			}
-		} else {
-			alert("fill All fields are required(dashed Input).....!");
-			return false;
-		}
+	else {
+		document.getElementById("errorMessage").innerHTML = 'Form is Valid';
+		return true;
 	}
 }
 
