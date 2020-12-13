@@ -20,6 +20,7 @@ for(var i = 0; i < items.length; i++){
  
 	items[i].onclick = function(){
 		index = tab.indexOf(this.innerHTML);
+		
 		//console.log(this.innerHTML + " INDEX = " + index);
 	};
  
@@ -88,7 +89,7 @@ function addJoke(){
 	var listNode = document.getElementById("jokeList"),
 		textNode = document.createTextNode(divGet.innerHTML),
 		liNode = document.createElement("LI");		
-		liNode.appendChild(textNode);
+		liNode.appendChild(textNode);		
 		listNode.appendChild(liNode);		
 		refreshArray();
 		
@@ -99,7 +100,7 @@ function addJoke(){
 	};
 		
 }
-  
+
 function deleteJoke(){	  
 	  refreshArray();
 	  if(items.length > 0){
