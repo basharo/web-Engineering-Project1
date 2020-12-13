@@ -58,6 +58,7 @@
 			<section>
 				<div>
 					<P><h3>Favorite Joke List</h3></P>
+					<input type="text" id="searchField" onkeyup="filterJokes()" placeholder="Search for a Joke.." title="Type in a word">
 					<button onclick="addJoke()">Add</button>
 					<div class="tooltip">
 						<button onclick="deleteJoke()">Delete</button>
@@ -65,7 +66,6 @@
 					</div>
 					<div  class="divContainer">						
 						<ul id="jokeList">
-							<!--jokeList added here -->
 						</ul>
 					</div>	
 				</div>	

@@ -81,6 +81,9 @@ div ul {
 list-style : none;
 padding : 11px 17px;
 }
+main {
+padding : 0 5px;
+}
 main img {
 width : 100%;
 height : auto;
