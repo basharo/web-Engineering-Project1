@@ -60,6 +60,8 @@ async function postData(){
 	console.log(divjokeBody.value);
 	console.log(divSexist.checked);
 	const params = {
+			"formatVersion": 3,
+			"category": "Miscellaneous",
 			"type": "single",
             "joke": htmlEscape(divjokeBody.value),
 			"flags": {
