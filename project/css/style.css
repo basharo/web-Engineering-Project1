@@ -1,0 +1,194 @@
+body {
+font-family : sans-serif;
+font-size : 16px;
+font-weight : 300;
+}
+.row {
+clear : both;
+}
+.limited {
+max-width : 1920px;
+margin : auto;
+}
+.column {
+float : left;
+padding : 0;
+margin : 0 0 0;
+}
+.small-12 {
+width : 100%;
+}
+.small-6 {
+width : 50%;
+}
+header {
+background-color : #9f8788;
+}
+header img {
+float : left;
+height : 85px;
+padding-right : 10px;
+}
+header h1, header h2 {
+margin : 0;
+color : #fff;
+font-weight : 300;
+font-style : italic;
+}
+header h1 {
+padding : 0 0 0;
+}
+header h2 {
+padding : 0 0 0;
+}
+button#menuBtn {
+background : none;
+border : none;
+color : #fff;
+cursor : pointer;
+padding : 0 30px 0;
+}
+nav {
+background-color : #44cfd7;
+}
+nav ul {
+margin : 0;
+padding : 0;
+}
+nav li {
+list-style-type : none;
+}
+nav a {
+display : block;
+padding : 0;
+color : #eee;
+text-align : center;
+text-decoration : none;
+}
+nav ul.open {
+display : block;
+}
+nav ul {
+display : none;
+}
+nav li.active {
+background-color: #44cf57;
+}
+nav a:hover {
+background-color: #441fd7;
+}
+div ul {
+list-style : none;
+padding : 11px 17px;
+}
+main img {
+width : 100%;
+height : auto;
+}
+main h1, main h3 {
+color : #9b87b8;
+font-style : italic;
+margin : 0 0;
+}
+main p {
+margin : 0 0 0;
+}
+#apiGetDiv, #btnGetJoke {
+	margin : 5px;
+	padding : 11px 17px;;
+}
+.labeled {
+position : relative;
+}
+.labeled h6, .labeled p {
+position : absolute;
+margin : 0;
+width : 100%;
+}
+.labeled h6 {
+top : 0;
+font-weight : 300;
+}
+.labeled p {
+bottom : 0;
+font-weight : 700;
+color : #b00;
+}
+footer {
+background-color : #9f8788;
+}
+footer h2 {
+font-style : italic;
+text-transform : uppercase;
+margin : 0 0;
+}
+.clearfix:after {
+content : "";
+display : table;
+clear : both;
+}
+
+.tooltip {
+position: relative;
+display: inline-block;
+border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+visibility: hidden;
+width: 120px;
+background-color: black;
+color: #fff;
+text-align: center;
+padding: 5px 0;
+border-radius: 6px;
+position: absolute;
+z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+visibility: visible;
+}
+input{
+margin : 10px;
+}
+input:valid{
+border-color:green;
+}
+input:invalid{
+border-color:red;
+}
+
+input:focus:invalid {
+border-color:black;
+}
+input:required{
+border-style:dashed;
+}
+/* Extra small devices (phones, 640px and down) */
+@media only screen and (max-width: 640px){
+header h1 {font-size: 2.0rem;}
+header h2 {font-size: 1.1rem; }
+header img {height: 60px;}    
+.medium-6 {width: 33.3333%;}
+.medium-4 {width: 20%;}    
+nav li {width: 20%; float: left;}   
+}
+/* Medium devices (landscape tablets, 641px and up to 1439) */
+@media only screen and  (min-width: 641px) {
+header h1 {font-size: 2.85rem;}
+header h2 {font-size: 1.5rem; }
+header img {height: 100px;}    
+.medium-6 {width: 50%;}    
+nav button {display: none;}
+nav ul {display: block;}
+nav li {width: 25%; float: left;} 
+}
+
+/* Large devices (laptops/desktops, 1440px and up) */
+@media only screen and (min-width: 1440px) {
+.large-3 {width: 25%;}  
+nav ul {margin-left: 2vw;}
+nav li {width:auto;}
+nav a {padding: .7rem 1rem;}
+}
