@@ -130,6 +130,7 @@ function deleteJoke(){
 	  refreshArray();
 	  if(items.length > 0){
 		  items[index].parentNode.removeChild(items[index]);
+		  document.getElementById("searchField").value = "";
 	  }
 }
 
