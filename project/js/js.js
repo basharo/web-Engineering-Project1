@@ -120,6 +120,7 @@ function addJoke(){
 		// add event to the new LI		
 		liNode.onclick = function(){
 		index = tab.indexOf(liNode.innerHTML);
+		document.getElementById("searchField").value = liNode.innerHTML ;
 		//console.log(liNode.innerHTML + " INDEX = " + index);
 	};
 		
