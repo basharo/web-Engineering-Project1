@@ -57,8 +57,8 @@ async function getData(){
 }
 */
 async function postData(){
-	console.log(divjokeBody.value);
-	console.log(divSexist.checked);
+	//console.log(divjokeBody.value);
+	//console.log(divSexist.checked);
 	const params = {
 			"formatVersion": 3,
 			"category": "Miscellaneous",
@@ -80,7 +80,7 @@ async function postData(){
 			console.log(this.status);
 			console.log(this.readyState);
     if (this.readyState == 4 && this.status == 201) {
-		console.log('this.readyState');
+		//console.log('this.readyState');
 		let data = JSON.parse(this.responseText);	
 			if(data.erroe)
 				divpost.innerHTML = "Joke can not be submitted";
@@ -182,92 +182,6 @@ function filterJokes() {
             li[i].style.display = "none";
         }		
     }
-}
-
-function buildSubmission()
-{
-    var category = gebid("f_category").value;
-    var type = gebid("f_type").value;
-
-    submission = {
-        formatVersion: settings.formatVersion,
-        category: category,
-        type: type
-    }
-
-    if(type == "single")
-    {
-        submission.joke = gebid("f_setup").value;
-    }
-    else if(type == "twopart")
-    {
-        submission.setup = gebid("f_setup").value;
-        submission.delivery = gebid("f_delivery").value;
-    }
-
-    var sLang = gebid("f_language").value || settings.defaultLang;
-
-    if(sLang == "other")
-    {
-        var elVal = gebid("f_customLang").value;
-        if(elVal && elVal.length == 2)
-        {
-            sLang = elVal;
-        }
-        else
-        {
-            sLang = "Please enter 2 char language code";
-        }
-    }
-
-    submission = {
-        ...submission,
-        flags: {
-            nsfw: gebid("f_flags_nsfw").checked,
-            religious: gebid("f_flags_religious").checked,
-            political: gebid("f_flags_political").checked,
-            racist: gebid("f_flags_racist").checked,
-            sexist: gebid("f_flags_sexist").checked,
-        },
-        lang: sLang
-    };
-
-    var subDisp = gebid("submissionDisplay");
-
-    var escapedSubmission = JSON.parse(JSON.stringify(submission)); // copy value without reference
-    if(type == "single")
-    {
-        escapedSubmission.joke = htmlEscape(submission.joke);
-    }
-    else if(type == "twopart")
-    {
-        escapedSubmission.setup = htmlEscape(submission.setup);
-        escapedSubmission.delivery = htmlEscape(submission.delivery);
-    }
-    subDisp.innerText = JSON.stringify(escapedSubmission, null, 4);
-
-    var subCodeElem = gebid("submissionCodeElement");
-
-    if(!subCodeElem.classList.contains("prettyprint"))
-    {
-        subCodeElem.classList.add("prettyprint");
-    }
-
-    if(subCodeElem.classList.contains("prettyprinted"))
-    {
-        subCodeElem.classList.remove("prettyprinted");
-    }
-
-    if(subCodeElem.classList.contains("lang-json"))
-    {
-        subCodeElem.classList.remove("lang-json");
-    }
-
-    subCodeElem.classList.add("lang-json");
-
-    setTimeout(function() {
-        PR.prettyPrint(); // eslint-disable-line no-undef
-    }, 5);
 }
 
 /**
