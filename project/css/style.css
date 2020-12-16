@@ -177,7 +177,7 @@ header img {height: 60px;}
 .medium-4 {width: 20%;}    
 nav li {width: 20%; float: left;}   
 }
-/* Medium devices (landscape tablets, 641px and up to 1439) */
+/* Medium devices (landscape tablets, 641px and up to 1440) */
 @media only screen and  (min-width: 641px) {
 header h1 {font-size: 2.85rem;}
 header h2 {font-size: 1.5rem; }
@@ -188,8 +188,8 @@ nav ul {display: block;}
 nav li {width: 25%; float: left;} 
 }
 
-/* Large devices (laptops/desktops, 1440px and up) */
-@media only screen and (min-width: 1440px) {
+/* Large devices (laptops/desktops, 1441px and up) */
+@media only screen and (min-width: 1441px) {
 .large-3 {width: 25%;}  
 nav ul {margin-left: 2vw;}
 nav li {width:auto;}
